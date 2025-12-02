@@ -1,5 +1,31 @@
-﻿/.vs
-/.idea
-*/a.exe
+﻿# CMake 构建文件
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# 编译输出
 *.exe
-/.vscode
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# IDE 文件
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.log
+*.bak

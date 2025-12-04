@@ -12,6 +12,7 @@ file(GLOB_RECURSE ALL_SOURCES
         "math/*.cpp"
         "misc/*.cpp"
         "string/*.cpp"
+        "string/*.hpp"
 )
 
 foreach(SOURCE_FILE ${ALL_SOURCES})

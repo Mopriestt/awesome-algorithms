@@ -5,7 +5,7 @@
 using namespace std;
 
 // Returns prime filter for [1, n]
-vector<bool> getPrimeF(int n) {
+vector<bool> getPrimeF(const int n) {
     vector<bool> f(n + 1, true);
     for (long long i = 2; i * i <= n; i ++) {
         if (!f[i]) continue;

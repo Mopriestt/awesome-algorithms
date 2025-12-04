@@ -101,12 +101,12 @@ void test_manacher(int n, int charSet) {
     cout<<"Test passed"<<endl;
 }
 
-int main() {
-    srand(time(0));
-    test_manacher(100, 1);
-    test_manacher(300, 2);
-    test_manacher(500, 2);
-    test_manacher(500, 3);
-    test_manacher(1000, 3);
-    return 0;
-}
+// int main() {
+//     srand(time(0));
+//     test_manacher(100, 1);
+//     test_manacher(300, 2);
+//     test_manacher(500, 2);
+//     test_manacher(500, 3);
+//     test_manacher(1000, 3);
+//     return 0;
+// }

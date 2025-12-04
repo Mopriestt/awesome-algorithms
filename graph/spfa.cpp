@@ -80,7 +80,7 @@ void test_spfa() {
     cout << "Test passed" << endl;
 }
 
-int main() {
-    test_spfa();
-    return 0;
-}
+// int main() {
+//     test_spfa();
+//     return 0;
+// }

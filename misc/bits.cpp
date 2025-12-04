@@ -19,8 +19,8 @@ void loopKSubSet(int n, int k) {
     }
 }
 
-int main() {
-    loopSubSet(100);
-    cout<<"============="<<endl;
-    loopKSubSet(5, 3);
-}
+// int main() {
+//     loopSubSet(100);
+//     cout<<"============="<<endl;
+//     loopKSubSet(5, 3);
+// }

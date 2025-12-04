@@ -67,17 +67,17 @@ void TestZ() {
     cout<<endl;
 }
 
-int main() {
-    string s, t;
-    for (int i = 0 ; i < 1000000; i ++) s += 'a';
-    s += 'b';
-    for (int i = 0; i < 10000; i ++) t += 'a';
-    t += 'b';
-    TestKmp(s, t);
-    
-    TestKmp("mississippi", "issip");
-
-    TestZ();
-
-    return 0;
-}
+// int main() {
+//     string s, t;
+//     for (int i = 0 ; i < 1000000; i ++) s += 'a';
+//     s += 'b';
+//     for (int i = 0; i < 10000; i ++) t += 'a';
+//     t += 'b';
+//     TestKmp(s, t);
+//
+//     TestKmp("mississippi", "issip");
+//
+//     TestZ();
+//
+//     return 0;
+// }

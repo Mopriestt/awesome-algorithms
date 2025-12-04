@@ -46,9 +46,9 @@ long long A(long long n, long long m) {
     return ret;
 }
 
-int main() {
-    cout << C(6, 3) << endl;
-    cout << C(5, 2) << ' ' << C(5, 3) << endl;
-    cout << A(6, 2) << endl;
-    return 0;
-}
+// int main() {
+//     cout << C(6, 3) << endl;
+//     cout << C(5, 2) << ' ' << C(5, 3) << endl;
+//     cout << A(6, 2) << endl;
+//     return 0;
+// }

@@ -68,7 +68,7 @@ void test_dijkstra() {
     cout << "Test passed" << endl;
 }
 
-int main() {
-    test_dijkstra();
-    return 0;
-}
+// int main() {
+//     test_dijkstra();
+//     return 0;
+// }

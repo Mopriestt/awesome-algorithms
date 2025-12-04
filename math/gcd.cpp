@@ -65,8 +65,8 @@ void test_exgcd() {
     cout<<"EX-GCD Test Passed!"<<endl;
 }
 
-int main() {
-    test_gcd();
-    test_exgcd();
-    return 0;
-}
+// int main() {
+//     test_gcd();
+//     test_exgcd();
+//     return 0;
+// }

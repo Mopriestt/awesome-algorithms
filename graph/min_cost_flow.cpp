@@ -81,13 +81,13 @@ struct MinCostFlow {
     }
 };
 
-int main() {
-    MinCostFlow mcf(5, 0, 4);
-    mcf.addedge(0, 1, 3, 1);
-    mcf.addedge(0, 3, 4, 3);
-    mcf.addedge(1, 2, 2, 2);
-    mcf.addedge(3, 2, 3, 1);
-    mcf.addedge(3, 4, 2, 4);
-    mcf.addedge(2, 4, 1, 1);
-    cout<<mcf.calculate()<<endl;
-}
+// int main() {
+//     MinCostFlow mcf(5, 0, 4);
+//     mcf.addedge(0, 1, 3, 1);
+//     mcf.addedge(0, 3, 4, 3);
+//     mcf.addedge(1, 2, 2, 2);
+//     mcf.addedge(3, 2, 3, 1);
+//     mcf.addedge(3, 4, 2, 4);
+//     mcf.addedge(2, 4, 1, 1);
+//     cout<<mcf.calculate()<<endl;
+// }

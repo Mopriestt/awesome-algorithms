@@ -67,7 +67,7 @@ void SimpleTestKruskal() {
 	cout << kruskal.calculate() << endl;
 }
 
-int main() {
-	SimpleTestKruskal();
-	return 0;
-}
+// int main() {
+// 	SimpleTestKruskal();
+// 	return 0;
+// }

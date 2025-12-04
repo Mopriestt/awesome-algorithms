@@ -72,14 +72,14 @@ void test_prime_lr(long long l, long long r) {
     cout<<endl;
 }
 
-int main() {
-    cout<<"test prime filter 1 to N"<<endl<<endl;
-    test_prime_f(100);
-
-    cout<<"test primes 1 to N"<<endl<<endl;
-    test_prime_n(1000);
-
-    cout<<endl<<"test primes L to R"<<endl<<endl;
-    test_prime_lr(100000000, 100001000);
-    return 0;
-}
+// int main() {
+//     cout<<"test prime filter 1 to N"<<endl<<endl;
+//     test_prime_f(100);
+//
+//     cout<<"test primes 1 to N"<<endl<<endl;
+//     test_prime_n(1000);
+//
+//     cout<<endl<<"test primes L to R"<<endl<<endl;
+//     test_prime_lr(100000000, 100001000);
+//     return 0;
+// }

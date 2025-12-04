@@ -25,11 +25,11 @@ int getKthSmallest(vector<int> &nums, int l, int r, int k) {
     return getKthSmallest(nums, pivotIndex, r, k - (pivotIndex - l));
 }
 
-int main() {
-    vector<int> testData;
-    testData = {1,2,3,4,5};
-
-    cout<<getKthSmallest(testData, 0, testData.size() - 1, 1);
-
-    return 0;
-}
+// int main() {
+//     vector<int> testData;
+//     testData = {1,2,3,4,5};
+//
+//     cout<<getKthSmallest(testData, 0, testData.size() - 1, 1);
+//
+//     return 0;
+// }

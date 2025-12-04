@@ -47,7 +47,7 @@ public:
     }
 };
 
-int main() {
-    UFSet uf(10);
-    return 0;
-}
+// int main() {
+//     UFSet uf(10);
+//     return 0;
+// }

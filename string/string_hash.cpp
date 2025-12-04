@@ -57,13 +57,13 @@ public:
     }
 };
 
-int main() {
-    string a = "1234123";
-    StringHash sh(a);
-    cout<<sh.subHash(0, 2)<<endl;
-    cout<<sh.subHash(4, 6)<<endl;
-    cout<<sh.subHash(0, 6)<<endl;
-    cout<<sh.subHash(1, 2)<<endl;
-    cout<<sh.subHash(5, 6)<<endl;
-    return 0;
-}
+// int main() {
+//     string a = "1234123";
+//     StringHash sh(a);
+//     cout<<sh.subHash(0, 2)<<endl;
+//     cout<<sh.subHash(4, 6)<<endl;
+//     cout<<sh.subHash(0, 6)<<endl;
+//     cout<<sh.subHash(1, 2)<<endl;
+//     cout<<sh.subHash(5, 6)<<endl;
+//     return 0;
+// }

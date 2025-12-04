@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 3.10)
+﻿cmake_minimum_required(VERSION 4.2)
 project(awesome-algorithms)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -25,6 +25,6 @@ foreach(SOURCE_FILE ${ALL_SOURCES})
     add_executable(${EXEC_NAME} ${SOURCE_FILE})
 
     set_target_properties(${EXEC_NAME} PROPERTIES
-            OUTPUT_NAME ${EXEC_NAME}
+            OUTPUT_NAME ${EXEC_NAME}g
     )
 endforeach()

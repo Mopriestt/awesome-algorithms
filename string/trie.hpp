@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include <memory>
 #include <unordered_map>
 
@@ -17,55 +18,68 @@ namespace algo {
             int count;
             int sum;
             std::unique_ptr<
-                std::unordered_map<element_type, std::unique_ptr<Node>>
+                std::unordered_map<element_type, int>
             > next;
             void require_next_map() {
                 if (next != nullptr) return;
-                next = std::make_unique<std::unordered_map<element_type, std::unique_ptr<Node>>>();
+                next = std::make_unique<std::unordered_map<element_type, int>>();
             }
             Node() : count(0), sum(0), next(nullptr) {}
-        } root;
+        };
+
+        std::vector<Node> node_pool;
+
+        const Node* find_node(const sequence_type& seq) const {
+            auto cur = 0;
+
+            for (const auto &ch : seq) {
+                if (!node_pool[cur].next) return nullptr;
+                const auto& mp = *node_pool[cur].next;
+                auto it = mp.find(ch);
+                if (it == mp.end()) return nullptr;
+                cur = it->second;
+            }
+
+            return &node_pool[cur];
+        }
 
     public:
+        Trie() {
+            node_pool.emplace_back();
+        }
+
         void add(const sequence_type& seq) {
-            auto cur = &root;
-            ++cur->sum;
+            int cur = 0;
+            ++node_pool[cur].sum;
             for (const auto &ch : seq) {
-                cur->require_next_map();
-                auto [it, inserted] =
-                    cur->next->try_emplace(ch, std::make_unique<Node>());
-                cur = it->second.get();
-                ++cur->sum;
+                node_pool[cur].require_next_map();
+                auto &mp = *node_pool[cur].next;
+                auto it = mp.find(ch);
+                if (it == mp.end()) {
+                    node_pool.emplace_back();
+                    mp[ch] = node_pool.size() - 1;
+                    cur = node_pool.size() - 1;
+                } else {
+                    cur = it->second;
+                }
+                ++node_pool[cur].sum;
             }
-            ++cur->count;
+            ++node_pool[cur].count;
         }
 
         int count(const sequence_type& seq) const {
-            auto cur = &root;
-
-            for (const auto &ch : seq) {
-                if (!cur->next) return 0;
-                auto it = cur->next->find(ch);
-                if (it == cur->next->end()) return 0;
-                cur = it->second.get();
-            }
-            return cur->count;
+            const Node* node = find_node(seq);
+            return node ? node->count : 0;
         }
 
         int count_prefix(const sequence_type& seq) const {
-            const Node* cur = &root;
-            for (const auto& ch : seq) {
-                if (!cur->next) return 0;
-                const auto& mp = *cur->next;
-                auto it = mp.find(ch);
-                if (it == mp.end()) return 0;
-                cur = it->second.get();
-            }
-            return cur->sum;
+            const Node* node = find_node(seq);
+            return node ? node->sum : 0;
         }
 
         void clear() {
-            root = Node{};
+            node_pool.clear();
+            node_pool.emplace_back();
         }
     };
 

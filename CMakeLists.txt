@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 4.2)
+﻿cmake_minimum_required(VERSION 3.31.6)
 project(awesome-algorithms)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -6,9 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-#
-# 1. 所有 .hpp 模板文件（任意子目录，但限定在几个源目录里）
-#
 file(GLOB_RECURSE ALL_SOURCES
         CONFIGURE_DEPENDS
         "data_structure/*.hpp"
@@ -18,22 +15,17 @@ file(GLOB_RECURSE ALL_SOURCES
         "string/*.hpp"
 )
 
-# header-only 库：algo
 add_library(algo INTERFACE)
 
-# 为了 IDE 识别，把所有头文件挂到 algo 上
 target_sources(algo INTERFACE
         ${ALL_SOURCES}
 )
 
-# 头文件根目录就是项目根
 target_include_directories(algo INTERFACE
         ${CMAKE_SOURCE_DIR}
 )
 
-#
-# 2. 引入 GoogleTest（FetchContent）
-#
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -47,9 +39,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-#
-# 3. 所有 .cpp 都是测试文件，同样限定在源代码子目录里
-#
+
 file(GLOB_RECURSE TEST_SOURCES
         CONFIGURE_DEPENDS
         "data_structure/*.cpp"

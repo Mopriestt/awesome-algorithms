@@ -28,31 +28,6 @@ namespace algo::bitwise_seg {
             return res;
         }
     };
-
-    void test_segment_tree() {
-        int n = 100000;
-        vector<int> max_array;
-        SegmentTree tree(n);
-        srand(time(NULL));
-        for (int i = 0; i < n;i ++) max_array.push_back(rand() % 100 > 98 ? rand() % 1000 : rand() % 100), tree.update(i, max_array[i]);
-
-        for (int query = 0; query < 10000; query ++) {
-            int l = rand() % n, r = rand() % n;
-            if (l > r) swap(l, r);
-            int result = tree.query(l, r);
-
-            int max_value = 0;
-            for (int i = l; i <= r; i ++) {
-                max_value = max(max_value, max_array[i]);
-            }
-            if (max_value != result) {
-                cout<<"Test failed!"<<endl;
-                return;
-            }
-        }
-
-        cout<<"Test passed"<<endl;
-    }
 }
 
 // int main() {

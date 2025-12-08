@@ -85,7 +85,6 @@ TEST(DisjointSetTest, Basic) {
     int totalMax  = 5;
     int totalMin  = 0; // still 1..9 original, but we never changed any to 0, so min = 1 actually
 
-    // 修正：当前没有改值，最小值就是 1
     totalMin = 1;
 
     for (int u = 1; u <= n; ++u) {

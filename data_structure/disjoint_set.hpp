@@ -92,7 +92,7 @@ public:
      * This updates all attributes at index u simultaneously.
      * You typically call this once per element after construction.
      */
-    void set_value(int u, int val) {
+    void setValue(int u, int val) {
 #define X(Name, var, Type, init, merge_code) var[u] = static_cast<Type>(val);
         DSU_ATTRS
 #undef X

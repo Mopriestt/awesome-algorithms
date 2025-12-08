@@ -10,7 +10,7 @@ TEST(DisjointSetTest, Basic) {
     // Initialize per-node values: use set_value(i, a[i])
     // Convention: DSU uses 1-based indices, vec is 0-based.
     for (int i = 1; i <= n; ++i) {
-        dsu.set_value(i, vec[i - 1]);
+        dsu.setValue(i, vec[i - 1]);
     }
 
     // Initially, each element is its own set

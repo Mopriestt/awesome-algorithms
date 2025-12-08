@@ -102,6 +102,10 @@ public:
         return { root / m, root % m };
     }
 
+    bool isRoot(int r, int c) {
+        return (rootIndex(r, c) == index(r, c));
+    }
+
     /*
      * Merge components containing two linear indices a, b.
      */

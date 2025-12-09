@@ -213,7 +213,7 @@ namespace algo {
             OpT::apply_assign(tree_[idx], value, len);
             hasAssign_[idx] = true;
             assign_[idx] = value;
-            add_[idx] = T{}; // 赋值会清除之前的加法 lazy
+            add_[idx] = T{};
         }
 
         void push_down(int idx, int l, int r) {

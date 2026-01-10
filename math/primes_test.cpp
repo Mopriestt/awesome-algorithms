@@ -7,12 +7,10 @@ using algo::getPrimes;
 using algo::ull;
 
 TEST(GetPrimeFTest, SmallNBasicPattern) {
-    // 注意：你的实现对 n=0 会越界，这里从 n=1 开始测
     auto f10 = getPrimeF(10);
 
     ASSERT_EQ(f10.size(), 11u);
 
-    // [0, 10] 中的质数是 2,3,5,7
     EXPECT_FALSE(f10[0]);
     EXPECT_FALSE(f10[1]);
     EXPECT_TRUE(f10[2]);
@@ -74,7 +72,6 @@ TEST(GetPrimesUpToTest, ConsistentWithFilterUpTo1000) {
             << "getPrimes returned non-prime " << x;
     }
 
-    // 2) 所有 f[i] 为 true 的 i 都应该出现在 primes 里面
     for (ull i = 2; i <= n; ++i) {
         if (f[static_cast<std::size_t>(i)]) {
             EXPECT_TRUE(std::binary_search(primes.begin(), primes.end(), i))

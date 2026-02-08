@@ -5,7 +5,7 @@
 
 namespace algo {
 
-    typedef u_int64_t ull;
+    typedef unsigned long long ull;
 
     // Returns prime filter for [1, n]
     inline std::vector<bool> getPrimeF(const int n) {

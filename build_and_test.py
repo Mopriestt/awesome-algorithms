@@ -26,7 +26,14 @@ def main():
         shutil.rmtree(build_dir)
 
     # 2. CMake configure
-    run(["cmake", "-S", ".", "-B", "build"], cwd=repo_root)
+    cmake_args = ["-S", ".", "-B", "build"]
+    
+    if platform.system() == "Windows":
+        if not shutil.which("cl") and shutil.which("gcc"):
+            print(">>> MSVC (cl.exe) not found, but GCC detected. Using 'MinGW Makefiles'.")
+            cmake_args.extend(["-G", "MinGW Makefiles"])
+
+    run(["cmake"] + cmake_args, cwd=repo_root)
 
     # 3. CMake build
     is_windows = platform.system() == "Windows"

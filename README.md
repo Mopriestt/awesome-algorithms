@@ -1,5 +1,5 @@
 # Algorithm Templates
-Algorithms &amp; data structures templates for algorithm contest
+Algorithms &amp; data structures templates implemented with modern C++.
 
 ## Data Structure
 - [Segment Trees](https://en.wikipedia.org/wiki/Segment_tree)

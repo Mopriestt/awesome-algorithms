@@ -13,6 +13,7 @@ Algorithms &amp; data structures templates implemented with modern C++.
 - [Dijkstra](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/dijkstra.cpp)
 - [SPFA](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/spfa.cpp)
 - [Kruskal](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/kruskal.cpp)
+- [LCA](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/lca.hpp)
 - [SAP Maxflow](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/sap_maxflow.cpp)
 - [Minimum Cost Maxflow](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/min_cost_flow.cpp)
 - [Leetcode style graph creation](https://github.com/Mopriestt/awesome-algorithms/blob/main/graph/leetcode_create_tree_graph.cpp)

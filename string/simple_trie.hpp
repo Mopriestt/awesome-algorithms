@@ -63,7 +63,7 @@ namespace algo {
             int cur = 0;
             int index = 0;
             for (const auto &ch : seq) {
-                if (node_pool[cur].next[ch - 'a'] == -1) return false;
+                if (node_pool[cur].next[ch - 'a'] == -1 || node_pool[cur].sum == 0) return false;
                 cur = node_pool[cur].next[ch - 'a'];
                 path[index++] = cur;
             }

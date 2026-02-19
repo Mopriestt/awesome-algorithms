@@ -21,6 +21,7 @@ namespace algo {
             auto cur = 0;
 
             for (const auto &ch : seq) {
+                if (node_pool[cur].sum == 0) return nullptr;
                 const auto& mp = node_pool[cur].next;
                 if (mp[ch - 'a'] == -1) return nullptr;
                 cur = mp[ch - 'a'];
@@ -32,6 +33,15 @@ namespace algo {
     public:
         SimpleTrie() {
             node_pool.emplace_back();
+        }
+
+        SimpleTrie(size_t capacity) {
+            node_pool.reserve(capacity);
+            node_pool.emplace_back();
+        }
+
+        void insert(const std::string_view seq) {
+            add(seq);
         }
 
         void add(const std::string_view seq) {
@@ -46,6 +56,27 @@ namespace algo {
                 ++node_pool[cur].sum;
             }
             ++node_pool[cur].count;
+        }
+
+        bool remove(const std::string_view seq) {
+            std::vector<int> path(seq.size());
+            int cur = 0;
+            int index = 0;
+            for (const auto &ch : seq) {
+                if (node_pool[cur].next[ch - 'a'] == -1) return false;
+                cur = node_pool[cur].next[ch - 'a'];
+                path[index++] = cur;
+            }
+            if (node_pool[cur].count == 0) return false;
+
+            cur = 0;
+            --node_pool[cur].sum;
+            for (int i = 0; i < index; ++i) {
+                cur = path[i];
+                --node_pool[cur].sum;
+            }
+            --node_pool[cur].count;
+            return true;
         }
 
         int count(const std::string_view seq) const {

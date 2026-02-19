@@ -47,6 +47,10 @@ namespace algo {
         Trie() {
             node_pool.emplace_back();
         }
+        Trie(size_t capacity) {
+            node_pool.reserve(capacity);
+            node_pool.emplace_back();
+        }
 
         void add(const sequence_type& seq) {
             int cur = 0;

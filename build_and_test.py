@@ -51,8 +51,7 @@ def main():
 
     run(ctest_cmd, cwd=repo_root)
 
-    print("\n✅ Build and tests finished successfully.")
-
+    print("\nBuild and tests finished successfully.")
 
 if __name__ == "__main__":
     main()
